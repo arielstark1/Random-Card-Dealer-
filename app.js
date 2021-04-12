@@ -14,12 +14,28 @@ let numeros = [
   "Q",
   "K"
 ];
+let colors = ["black ", "Red"
 
+]
 function randomCard() {
+
+
+  let SingleColors = colors[Math.floor(Math.random() * colors.length)];
   let SinglePalos = palos[Math.floor(Math.random() * palos.length)];
+
   let SingleNumeros = numeros[Math.floor(Math.random() * numeros.length)];
-  let showCarta = `${SingleNumeros}${SinglePalos}`;
-  document.getElementById("showing").style.background = "#0accff";
-  document.getElementById("showing").innerHTML = showCarta;
+  let showCarta = `${SinglePalos}`
+  let showNumero=`${SingleNumeros}`
+  let showInverso=`${SinglePalos}`;
+  document.getElementById("container").style.background = "white";
+  if (SinglePalos === "♦" || SinglePalos === "♥") {
+    document.getElementById("container").style.color = "red";
+  }
+
+  document.getElementById("showCarta").innerHTML = showCarta;
+  document.getElementById("showNumero").innerHTML = showNumero;
+  document.getElementById("showInverso").innerHTML = showInverso;
+
 }
+
 randomCard();
